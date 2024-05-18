@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Navigation</title>
+  <!-- Подключение Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="actirovki.css">
+  <script src="actirovki.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Добавление небольшого пользовательского CSS для полной высоты боковой панели -->
+  <style>
+
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Навигационное меню -->
+    <div class="container-fluid px-0">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-black py-0 px-0">
+          <a class="navbar-brand" href="#">
+              <img id="logo" img src="mayak.png" alt="Маяк Норильска" width="60" height="60"> &nbsp;&nbsp;&nbsp;Маяк Норильска
+          </a>
+          <span class="v-line"></span>
+          <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Главная</a>
+                </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="">Актировки</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="">Бот контроля</a>
+                  </li>
+              </ul>
+              <div class="dropdown ml-auto">
+                  <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                      <strong></strong>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                      <li><a class="dropdown-item" href="#">Настройки</a></li>
+                      <li><a class="dropdown-item" href="#">Профиль</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Выйти</a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </div>
+  
+</div>
+  
+
+<!-- Основной контент страницы -->
+
+  <main class="container-fluid mt-4">
+      
+
+    <div class="text-end mb-3">
+      <div class="button-container">
+        <button id="manualWorkBtn" class="btn btn-icon-split">
+          <span class="icon">
+            <i class="fas fa-hand-paper"></i>
+          </span>
+          <span class="text">Ручная работа</span>
+        </button>
+      
+        <button id="autoWorkBtn" class="btn btn-icon-split">
+          <span class="icon">
+            <i class="fas fa-robot"></i>
+          </span>
+          <span class="text">Автоматическая работа</span>
+        </button>
+      </div>   
+    </div>
+    
+    <h1 id="workModeTitle" class="mt-4">Автоматическая работа</h1>
+  
+
+
+    <!-- templates/actirovki.html -->
+
+    
+    <div class="controls-container">
+      <div class="left-side-controls">
+        <button id="autoWorkVKLVIKL" class="btn btn-success btn-vkl-vykl">
+          <span class="text"></span>
+        </button>
+        
+      </div>
+      <div class="form-check form-switch ms-3">
+        <input class="form-check-input" type="checkbox" id="vkSwitchAUTO">
+        <label class="form-check-label" for="vkSwitchAUTO1">
+          <i class="fab fa-vk"></i> VK
+        </label>
+      </div>
+      <div class="form-check form-switch ms-3">
+        <input class="form-check-input" type="checkbox" id="telegramSwitchAUTO" checked>
+        <label class="form-check-label" for="telegramSwitchAUTO1">
+          <i class="fab fa-telegram-plane"></i> Telegram
+        </label>
+      </div>
+    </div>
+
+  
+  
+
+  <!-- таблица автоматической работы -->
+  <div id="autoWorkSection" class="container-fluid w-100 mt-5" >
+
+  </div>
+
+
+  <!-- Скрытый блок для "Ручной работы" -->
+  <div id="manualWorkSection" class="row" style="display: none;">
+    
+    <!-- Блок для формы и прогноза -->
+    <div class="container-fluid px-4">
+      
+  
+      <div class="row">
+        <div class="col-xl-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-cloud-sun"></i>
+                    Прогноз актировки
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <!-- Блок для изображения -->
+                        <div class="col-md-6">
+                            <div class="rounded p-3" style="height: 443px;">
+                                <img src="AKTA 2.png" alt="Preview" class="img-fluid img-rem">
+                            </div>
+
+                            <!-- Кнопки и переключатели в одном ряду, выровненные по левому краю -->
+                            <div class="d-flex align-items-center mt-3">
+                              <button type="button" class="btn btn-primary">Отправить</button>
+                              <!-- Переключатели для VK и Telegram -->
+                              <div class="form-check form-switch ms-3">
+                                  <input class="form-check-input" type="checkbox" id="vkSwitch">
+                                  <label class="form-check-label" for="vkSwitch">
+                                      <i class="fab fa-vk"></i> VK
+                                  </label>
+                              </div>
+                              <div class="form-check form-switch ms-3">
+                                  <input class="form-check-input" type="checkbox" id="telegramSwitch">
+                                  <label class="form-check-label" for="telegramSwitch">
+                                      <i class="fab fa-telegram-plane"></i> Telegram
+                                  </label>
+                              </div>
+                          </div>
+                        </div>
+                        <!-- Блок для формы и прогноза -->
+                        <div class="col-md-6 ">
+                            <div class=" rounded p-3">
+                                <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+
+          <!-- Место для отображения текста прогноза погоды -->
+<div id="weatherForecast" class="alert alert-secondary" role="alert">
+  Текст прогноза погоды будет отображаться здесь.
+</div>
+
+<!-- Область для кнопок -->
+<div class="d-flex justify-content-between my-3">
+  <!-- Кнопка для получения прогноза погоды -->
+  <button id="getWeatherForecastBtn" class="btn btn-info">
+    <i class="fas fa-cloud"></i> Получить прогноз погоды
+  </button>
+  
+  <!-- Кнопка "Сформировать заново" -->
+  <button id="regenerateTableBtn" class="btn btn-primary">
+    <i class="fas fa-sync-alt"></i> Сформировать заново
+  </button>
+</div>
+  
+
+  <!-- Редактируемая таблица и дополнительные поля -->
+  
+    <div class="card mb-4">
+      <div class="card-header">
+        <i class="fas fa-cloud-sun"></i>
+         Погодные данные
+      </div>
+      <div class="card-body_t">
+        
+        <div class="column">
+          <div class="row">
+            <div class="col-md-4"><strong>Температура:</strong></div>
+            <div class="col-md-8">
+              <div class="input-group">
+                <input type="text" class="form-control" id="temp1" placeholder="От" pattern="-?\d*">
+                <input type="text" class="form-control" id="temp2" placeholder="До" pattern="-?\d*">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fas fa-thermometer-half"></i> °C</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4"><strong>Ветер:</strong></div>
+            <div class="col-md-8">
+              <div class="input-group">
+                <input type="text" class="form-control" id="veter1" placeholder="От" pattern="\d*">              
+                <input type="text" class="form-control" id="veter2" placeholder="До" pattern="\d*">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fas fa-wind"></i> м/с</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4"><strong>Порывы:</strong></div>
+            <div class="col-md-8">
+              <div class="input-group">
+                <input type="text" class="form-control" id="poriv1" placeholder="От" pattern="\d*">
+                <input type="text" class="form-control" id="poriv2" placeholder="До" pattern="\d*">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fas fa-wind"></i> м/с</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4"><strong>Порывы до:</strong></div>
+            <div class="col-md-8">
+              <div class="input-group single-input_p">
+                <input type="text" class="form-control" id="porivdo" placeholder="Введите значение" pattern="\d*">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fas fa-wind"></i> м/с</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="button-container_izm">
+            <button id="updateForecastBtn" class="btn btn-warning">Изменить прогноз</button>
+          </div>
+        </div>
+        <div class="column right-column">
+          <div class="row">
+            <div class="col-md-4"><strong>Прогноз актировки:</strong></div>
+            <div class="col-md-8">
+              <div class="input-group single-input">
+                <input type="text" class="form-control" id="forecastInput" placeholder="Введите значение" pattern="\d*">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4"><strong>Шкала:</strong></div>
+            <div class="col-md-8">
+              <div class="input-group single-input">
+                <input type="text" class="form-control" id="scaleInput" placeholder="Введите значение" pattern="\d*">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</main>
+
+<!-- Модальное окно подтверждения -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmationModalLabel">Подтверждение</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Вы точно хотите отправить прогноз? Это действие невозможно будет изменить.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Нет</button>
+        <button type="button" class="btn btn-primary" id="confirmSend">Да</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
