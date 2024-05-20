@@ -54,20 +54,29 @@
                       <a class="nav-link nav-link--active" href="/BOT/norilskcitybot.html">Бот контроля</a>
                   </li>
               </ul>
-              <div class="dropdown ml-auto">
-                  <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                      <strong></strong>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                      <li><a class="dropdown-item" href="#">Настройки</a></li>
-                      <li><a class="dropdown-item" href="#">Профиль</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Выйти</a></li>
-                  </ul>
-              </div>
+              <button class="btn-logout" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Выход
+                <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H15M8 8L4 12M4 12L8 16M4 12L16 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+              </button>
           </div>
       </nav>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog--logout">
+      <div class="modal-content">
+        <div class="modal-header modal-header--logout">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-body--logout">
+          Вы уверены что хотите выйти?
+        </div>
+        <div class="modal-footer modal-footer--logout">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Да</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Нет</button>
+        </div>
+      </div>
+    </div>
   </div>
   
 </div>
@@ -113,14 +122,14 @@
               </form>
           </div>
       </div>
-
-      
+  
       <script>
         function updateProgress(value) {
             document.getElementById('progressValue').innerText = value;
         }
       </script>
       <!-- Дополнительный контент страницы может быть здесь -->
+
     </main>
 
 
@@ -213,13 +222,9 @@
         </div>
     </div>
 
-
-
-
-
-
-
 </div>
+
+
 
 
 
