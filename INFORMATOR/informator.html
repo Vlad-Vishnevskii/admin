@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Navigation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- Подключение Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="informator.css">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Добавление небольшого пользовательского CSS для полной высоты боковой панели -->
+  <style>
+
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Навигационное меню -->
+    <div class="container-fluid px-0">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-black py-0 px-0">
+          <a class="navbar-brand" href="#">
+              <img id="logo" img src="mayak.png" alt="Маяк Норильска" width="60" height="60"> 
+              <!-- <span>
+                &nbsp;&nbsp;&nbsp;Маяк Норильска
+              </span> -->
+          </a>
+          <!-- <span class="v-line"></span> -->
+          <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item nav-item--fake">
+                  <a class="nav-link nav-link--fake" href="#">Маяк Норильска</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/MAIN/main.html">Главная</a>
+                </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/AKT/actirovki.html">Актировки</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/BOT/norilskcitybot.html">Бот контроля</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-link--active" href="/INFORMATOR/informator.html">Информатор</a>
+                  </li>
+              </ul>
+              <button class="btn-logout" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Выход
+                <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H15M8 8L4 12M4 12L8 16M4 12L16 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+              </button>
+          </div>
+      </nav>
+  </div>
+  
+</div>
+  
+
+<!-- Основной контент страницы -->
+
+<main class="container-fluid mt-4 main-page">
+  <h2>Информатор</h2>
+  <div class="main-top">
+    <div class="main-card">
+      <div class="main-card_icon main-card_icon--black">
+        <i class="fas fa-user"></i>
+      </div>
+      <p class="main-card_title">Общее количество пользователей</p>
+      <p class="main-card_value">1000</p>
+      <hr class="dark horizontal my-0">
+    </div>
+    <div class="main-card">
+      <div class="main-card_icon main-card_icon--blue">
+        <i class="fas fa-user"></i>
+      </div> 
+      <p class="main-card_title">Пользователи за неделю</p>
+      <p class="main-card_value">100</p>
+      <hr class="dark horizontal my-0">
+    </div>
+  </div>
+
+  
+  <h2 class="mt-5">Вывод данных бд</h2>
+  
+  <div class="table-container">
+    <div class="table-container_header">
+      <div class="table-container_headerCell">test1</div>
+      <div class="table-container_headerCell">test2</div>
+      <div class="table-container_headerCell">test3</div>
+      <div class="table-container_headerCell">test4</div>
+      <div class="table-container_headerCell">test5</div>
+      <div class="table-container_headerCell">test6</div>
+      <div class="table-container_headerCell">test7</div>
+      <div class="table-container_headerCell">test8</div>
+      <div class="table-container_headerCell">test9</div>
+      <div class="table-container_headerCell">test10</div>
+      <div class="table-container_headerCell">test11</div>
+      <div class="table-container_headerCell">test12</div>
+    </div>
+    <div class="table-container_row">
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+    </div>
+    <div class="table-container_row">
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+    </div>
+    <div class="table-container_row">
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+    </div>
+    <div class="table-container_row">
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell"></div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+    </div>
+    <div class="table-container_row">
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell"></div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+    </div>
+    <div class="table-container_row">
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell"></div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+      <div class="table-container_cell">test</div>
+    </div>
+
+
+  </div>
+
+  
+
+</main>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog--logout">
+    <div class="modal-content">
+      <div class="modal-header modal-header--logout">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body modal-body--logout">
+        Вы уверены что хотите выйти?
+      </div>
+      <div class="modal-footer modal-footer--logout">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Да</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Нет</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальное окно подтверждения -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmationModalLabel">Подтверждение</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Вы точно хотите отправить прогноз? Это действие невозможно будет изменить.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Нет</button>
+        <button type="button" class="btn btn-primary" id="confirmSend">Да</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="informator.js"></script>
+</body>
+</html>
