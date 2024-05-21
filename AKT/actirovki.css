@@ -126,17 +126,18 @@ body {
 
   /*Стили кнопок перехода  */
   .button-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+    position: absolute;
+    right: 0; 
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: flex-end;
     z-index: 1000;
   }
   
   .btn-icon-split {
-    width: 60px; /* изначальная ширина для иконки */
+    min-width: 260px; /* изначальная ширина для иконки */
+    width: fit-content;
     height: 50px;
     border: none;
     background-color: white;
@@ -149,7 +150,7 @@ body {
     overflow: hidden;
     display: flex; /* используем flexbox для центрирования */
   align-items: center; /* центрируем элементы по вертикали */
-  justify-content: flex-start; /* выравниваем элементы по горизонтали слева */
+  justify-content: flex-end; /* выравниваем элементы по горизонтали слева */
   }
   
   .btn-icon-split .icon {
@@ -168,13 +169,11 @@ body {
     overflow: hidden;
     line-height: normal;
     left: 60px; /* начало текста справа от иконки */    
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s ease-in-out;
   }
   
   .btn-icon-split:hover {
-    width: 270px; /* максимальная ширина при наведении */
-    padding: 5px 20px; /* увеличенные боковые отступы для визуальной поддержки развертывания */
     color: #0d6efd;
   }
   
@@ -228,12 +227,9 @@ padding: 0.25rem 0.5rem; /* Примерные значения для $btn-padd
 
     .controls-container {
       display: flex;
-      justify-content: space-between;
+      gap: 20px;
       align-items: center;
       padding: 10px 0;
-      margin-bottom: 20px; /* Отступ снизу */
-      background-color: rgba(0, 0, 0, 0.1); /* Затемнённый фон */
-      border-radius: 8px; /* Слегка скруглённые углы для эстетики */
     }
     
     .left-side-controls {
@@ -328,6 +324,16 @@ padding: 0.25rem 0.5rem; /* Примерные значения для $btn-padd
         padding-top: 25px;
       }
 
+.bot-table-tr {
+  border-top: none;
+  border-bottom: 2px solid #000;
+}
 
+.btn-on {
+  min-width: 115px;
+  font-weight: 700;
+  padding: 5px;
+  border-radius: 10px;
+}
 
 

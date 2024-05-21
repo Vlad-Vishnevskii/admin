@@ -4,11 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const manualWorkSection = document.getElementById('manualWorkSection');
     const getWeatherForecastBtn = document.getElementById("getWeatherForecastBtn");
     const workModeTitle = document.getElementById('workModeTitle');
+    autoWorkBtn.style.color = '#0d6efd';
 
     manualWorkBtn.addEventListener('click', () => {
         manualWorkSection.style.display = 'block';
         autoWorkSection.style.display = 'none';
         workModeTitle.textContent = 'Ручная работа';
+        manualWorkBtn.style.color = '#0d6efd';
+        autoWorkBtn.style.color = '#000000';
     });
     
     
@@ -18,6 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
             manualWorkSection.style.display = 'none';
             autoWorkSection.style.display = 'block';
             workModeTitle.textContent = 'Автоматическая работа';
+            manualWorkBtn.style.color = '#000000';
+            autoWorkBtn.style.color = '#0d6efd';
         });
     }
 
@@ -202,6 +207,7 @@ button.addEventListener('click', function () {
 
     if (!isOn) {  // Если текущее состояние было "Включить", значит мы включаем систему
         // Отправка запроса на сервер для активации функции
+        button.style.opacity = '0.6';
         fetch('/trigger_fetch_weather/', {
             method: 'POST',
             headers: {
@@ -212,6 +218,7 @@ button.addEventListener('click', function () {
         .then(data => console.log(data.message))
         .catch(error => console.error('Ошибка:', error));
     } else {
+        button.style.opacity = '1';
         console.log('Система выключена, запрос не отправлен');
     }
 });

@@ -66,14 +66,9 @@
   <main class="container-fluid mt-4">
       
 
-    <div class="text-end mb-3">
+  
       <div class="button-container">
-        <button id="manualWorkBtn" class="btn btn-icon-split">
-          <span class="icon">
-            <i class="fas fa-hand-paper"></i>
-          </span>
-          <span class="text">Ручная работа</span>
-        </button>
+        
       
         <button id="autoWorkBtn" class="btn btn-icon-split">
           <span class="icon">
@@ -81,8 +76,15 @@
           </span>
           <span class="text">Автоматическая работа</span>
         </button>
+
+        <button id="manualWorkBtn" class="btn btn-icon-split">
+          <span class="icon">
+            <i class="fas fa-hand-paper"></i>
+          </span>
+          <span class="text">Ручная работа</span>
+        </button>
       </div>   
-    </div>
+    
     
     <h1 id="workModeTitle" class="mt-4">Автоматическая работа</h1>
   
@@ -91,9 +93,12 @@
     <!-- templates/actirovki.html -->
 
     
+
+  <!-- таблица автоматической работы -->
+  <div id="autoWorkSection" class="w-100 mt-1">
     <div class="controls-container">
       <div class="left-side-controls">
-        <button id="autoWorkVKLVIKL" class="btn btn-success btn-vkl-vykl">
+        <button id="autoWorkVKLVIKL" class="btn btn-on btn-success btn-vkl-vykl">
           <span class="text"></span>
         </button>
         
@@ -112,11 +117,49 @@
       </div>
     </div>
 
-  
-  
+    <div class="row">
+      <div class="col-12">
+          <table id="notificationsTable" class="table table-hover table-striped" style="width:100%">
+              <thead >
+                  <tr class="bot-table-tr">
+                      <th scope="col">Прогноз</th>
+                      <th scope="col">Изображение</th>
+                      <th scope="col">Сообщение в VK</th>
+                      <th scope="col">Сообщение в TG</th>
+                      <th scope="col">Дата</th>
+                  </tr>
+              </thead>
 
-  <!-- таблица автоматической работы -->
-  <div id="autoWorkSection" class="container-fluid w-100 mt-5" >
+              <!-- тестовый фрагмент использовать подобную сетку для рендера таблицы -->
+              
+              <tbody>
+                <!-- тестовые данные для верстки удалять для продакшн -->
+                <tr>
+                  <th scope="row">1</th>
+                  <td>test</td>
+                  <td>test</td>
+                  <td>test</td>
+                  <td>test</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>test</td>
+                  <td>test</td>
+                  <td>test</td>
+                  <td>test</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>test</td>
+                  <td>test</td>
+                  <td>test</td>
+                  <td>test</td>
+                </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+
 
   </div>
 
