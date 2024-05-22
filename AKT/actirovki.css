@@ -106,7 +106,7 @@ body {
 }
 
 body {
-  background-color: #ffff;
+  background-color: #ffffff;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -334,7 +334,22 @@ body {
 
 .actirovki-grid {
   display: grid;
-  grid-template-columns: 450px 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: minmax(400px, auto);
+  gap: 50px;
+}
+
+@media (max-width: 1300px) {
+  .actirovki-grid {
+    display: grid;
+    grid-template-columns: 450px 450px;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .table-container:last-child {
+    grid-column: 1/ -1;
+  }
 }
 
 .actirovki_textArea {
@@ -400,7 +415,7 @@ body {
 
 .input-group_editing-table {
   display: grid;
-  grid-template-columns: 100px 100px 100px;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
 }
 
@@ -417,10 +432,8 @@ body {
   border-color: #0d6efd;
 }
 
-.input-group_editing-table--double {
-  display: grid;
-  grid-template-columns: 210px 100px;
-  gap: 10px;
+.input-group_editing-table--double input {
+  grid-column: 1 / 3;
 }
 
 .editing-table_column .input-group-text {
@@ -428,6 +441,28 @@ body {
 }
 
 .btn-editing-table {
-  max-width: 320px;
+  max-width: 100%;
   margin-top: 10px;
+  width: 100%;
+}
+
+.table-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 170px;
+  margin-top: 20px;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  font-family: 'Roboto', sans-serif;
+}
+
+.button-container .btn {
+  background: none;
 }

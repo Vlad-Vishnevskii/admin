@@ -71,8 +71,6 @@
 
   
       <div class="button-container">
-        
-      
         <button id="autoWorkBtn" class="btn btn-icon-split">
           <span class="icon">
             <i class="fas fa-robot"></i>
@@ -176,20 +174,18 @@
   
       <div class="row">
         <div class="col-xl-12">
-            <div class="card mb-4">
+            <div class="">
                 <div class="card-header">
                     <i class="fas fa-cloud-sun"></i>
                     Прогноз актировки
                 </div>
-                <div class="card-body">
-                    <div class="row">
+                <div class="">
+                    <div class="">
                         <!-- Блок для изображения -->
                         <div class="actirovki-grid">
                            
                             <!-- Кнопки и переключатели в одном ряду, выровненные по левому краю -->
-                            <div>
-
-                            
+                            <div class="table-container">
                               <div class="d-flex align-items-center mt-3">
                                 <button type="button" class="btn btn-primary">Отправить</button>
                                 <!-- Переключатели для VK и Telegram -->
@@ -212,61 +208,62 @@
                               </div>
                             </div>
 
-                            <div class="card-body_t editing-table">
-        
-                              <div class="column editing-table_column">
-                                <div class="">
-                                  <div><strong>Температура:</strong></div>
-                                  <div class="input-group input-group_editing-table ">
-                                    <input type="text" class="form-control" id="temp1" placeholder="От" pattern="-?\d*">
-                                    <input type="text" class="form-control" id="temp2" placeholder="До" pattern="-?\d*">
-                                    <div class="input-group-append">
-                                      <span class="input-group-text"><i class="fas fa-thermometer-half"></i> °C</span>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="">
-                                  <div><strong>Ветер:</strong></div>
+                            <div class="table-container">    
+                                <div class="editing-table">
+
+                                <div class="editing-table_column">                                  
+                                    <div><strong>Температура:</strong></div>
                                     <div class="input-group input-group_editing-table ">
-                                      <input type="text" class="form-control" id="veter1" placeholder="От" pattern="\d*">              
-                                      <input type="text" class="form-control" id="veter2" placeholder="До" pattern="\d*">
+                                      <input type="text" class="form-control" id="temp1" placeholder="От" pattern="-?\d*">
+                                      <input type="text" class="form-control" id="temp2" placeholder="До" pattern="-?\d*">
                                       <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fas fa-wind"></i> м/с</span>
+                                        <span class="input-group-text"><i class="fas fa-thermometer-half"></i> °C</span>
                                       </div>
-                                    </div>
-                                </div>
-                                <div class="">
-                                  <div><strong>Порывы:</strong></div>
-                                    <div class="input-group input-group_editing-table ">
-                                      <input type="text" class="form-control" id="poriv1" placeholder="От" pattern="\d*">
-                                      <input type="text" class="form-control" id="poriv2" placeholder="До" pattern="\d*">
-                                      <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fas fa-wind"></i> м/с</span>
+                                    </div>                                 
+                                  
+                                    <div><strong>Ветер:</strong></div>
+                                      <div class="input-group input-group_editing-table ">
+                                        <input type="text" class="form-control" id="veter1" placeholder="От" pattern="\d*">              
+                                        <input type="text" class="form-control" id="veter2" placeholder="До" pattern="\d*">
+                                        <div class="input-group-append">
+                                          <span class="input-group-text"><i class="fas fa-wind"></i> м/с</span>
+                                        </div>
                                       </div>
-                                    </div>
-                                </div>
-                                <div class="">
-                                  <div><strong>Порывы до:</strong></div>                                 
-                                    <div class="input-group input-group_editing-table input-group_editing-table--double">
-                                      <input type="text" class="form-control" id="porivdo" placeholder="Введите значение" pattern="\d*">
-                                      <div class="input-group-append">
-                                        <span class="input-group-text"><i class="fas fa-wind"></i> м/с</span>
+                                  
+                                  
+                                    <div><strong>Порывы:</strong></div>
+                                      <div class="input-group input-group_editing-table ">
+                                        <input type="text" class="form-control" id="poriv1" placeholder="От" pattern="\d*">
+                                        <input type="text" class="form-control" id="poriv2" placeholder="До" pattern="\d*">
+                                        <div class="input-group-append">
+                                          <span class="input-group-text"><i class="fas fa-wind"></i> м/с</span>
+                                        </div>
                                       </div>
-                                    </div>
+                                  
+                                  
+                                    <div><strong>Порывы до:</strong></div>                                 
+                                      <div class="input-group input-group_editing-table input-group_editing-table--double">
+                                        <input type="text" class="form-control" id="porivdo" placeholder="Введите значение" pattern="\d*">
+                                        <div class="input-group-append">
+                                          <span class="input-group-text"><i class="fas fa-wind"></i> м/с</span>
+                                        </div>
+                                      </div>
+                                    
+                                  
+                                  
+                                  <button id="updateForecastBtn" class="btn btn-primary btn-editing-table">
+                                    <i class="fas fa-cloud"></i>
+                                    Изменить прогноз
+                                  </button>
                                   
                                 </div>
-                                
-                                <button id="updateForecastBtn" class="btn btn-primary btn-editing-table">
-                                  <i class="fas fa-cloud"></i>
-                                  Изменить прогноз
-                                </button>
-                                
                               </div>
                             </div>
 
+
                              <!-- Блок для формы и прогноза -->
 
-                          <div>
+                          <div class="table-container">
                             <div class="rounded">
                               <textarea class="form-control actirovki_textArea" rows="5" id="comment" name="text"></textarea>
                             </div>
@@ -321,11 +318,11 @@
 
   <!-- Редактируемая таблица и дополнительные поля -->
   
-    <div class="card mb-4">
-      <div class="card-header">
+    <!-- <div class="card mb-4"> -->
+      <!-- <div class="card-header">
         <i class="fas fa-cloud-sun"></i>
          Погодные данные
-      </div>
+      </div> -->
       <!-- <div class="card-body_t editing-table">
         
         <div class="column editing-table_column">
@@ -378,7 +375,7 @@
           </div>
         </div>
       </div> -->
-    </div>
+    <!-- </div> -->
   
 </main>
 
